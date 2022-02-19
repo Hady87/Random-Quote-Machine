@@ -1,27 +1,16 @@
-import { useState, useContext, useEffect } from "react";
-import { FaTwitter, FaQuoteRight, FaQuoteLeft } from "react-icons/fa";
+import {useContext } from "react";
+import QuoteContext from "../context/QuoteContext";
+import { FaTwitter} from "react-icons/fa";
+import Spinner from "./Spinner";
+
 //import { Link } from 'react-router-dom'
+
 function QuoteBox() {
-  const [quote, setQuote] = useState();
-  const [author, setAuthor] = useState();
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect((quote) => {
-    fetchQuote();
-    
-  }, []);
-
-  const fetchQuote = async () => {
-    const response = await fetch(`https://api.quotable.io/random`);
-    const data = await response.json();
-
-    setQuote(data.content);
-    setAuthor(data.author);
-    console.log(data);
-    //setIsLoading(false)
-  };
-  return (
-    <>
+  const { isLoading,quote,author,fetchQuote } = useContext(QuoteContext)
+   return isLoading ? (
+    <Spinner/>
+  ) : (<>
+     
       <div id="quote-box">
         <div id="text">
           <p>{`"${quote}"`}</p>
@@ -35,15 +24,18 @@ function QuoteBox() {
           </div>
 
           <div id="tweet-quote">
-            <a href="twitter.com/intent/tweet" target="_blank">
-              {" "}
-              <FaTwitter size={40} />
+            <a href={`https://twitter.com/intent/tweet?text="${quote }"    %0D%0A-${author}`} target="_blank">
+             
+            <FaTwitter size={40} />
             </a>
           </div>
         </div>
       </div>
     </>
   );
+ 
+ 
+    
 }
 
 export default QuoteBox;
