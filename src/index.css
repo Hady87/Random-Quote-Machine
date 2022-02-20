@@ -19,7 +19,12 @@ body {
   margin: auto;
   width: 80%;
   justify-content: center;
-  padding: 10px;
+  align-items: center;
+  justify-items: auto;
+  height: 20vh;
+}
+h2 {
+  text-align: center;
 }
 #quote-box {
   display: flex;
@@ -28,6 +33,7 @@ body {
   margin: auto;
   background-color: #d3d3d3;
   width: 80%;
+  height: 70vh;
   z-index: 1;
 }
 #text {
@@ -68,4 +74,31 @@ body {
 }
 p {
   font-size: 24px;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover::before {
+  content: "Tweet this quote!";
+  border: 1px solid black;
+  color: #000;
+}
+.footer {
+  background-color: #a9a9a9;
+
+  display: flex;
+  margin: auto;
+  width: 80%;
+  justify-content: center;
+  padding: 10px;
+  height: 10vh;
+}
+.footer a:hover::before {
+  text-decoration: none;
+  content: none;
+  border: none;
+}
+i {
+  color: black;
 }

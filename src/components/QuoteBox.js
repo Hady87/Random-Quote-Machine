@@ -1,20 +1,19 @@
-import {useContext } from "react";
+import { useContext } from "react";
 import QuoteContext from "../context/QuoteContext";
-import { FaTwitter} from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
 import Spinner from "./Spinner";
 
-//import { Link } from 'react-router-dom'
-
 function QuoteBox() {
-  const { isLoading,quote,author,fetchQuote } = useContext(QuoteContext)
-   return isLoading ? (
-    <Spinner/>
-  ) : (<>
-     
+  const { isLoading, quote, author, fetchQuote } = useContext(QuoteContext);
+  return isLoading ? (
+    <Spinner />
+  ) : (
+    <>
       <div id="quote-box">
         <div id="text">
           <p>{`"${quote}"`}</p>
         </div>
+
         <div id="author">{`-${author}`}</div>
         <div id="boxButton">
           <div id="new-quote">
@@ -24,18 +23,17 @@ function QuoteBox() {
           </div>
 
           <div id="tweet-quote">
-            <a href={`https://twitter.com/intent/tweet?text="${quote }"    %0D%0A-${author}`} target="_blank">
-             
-            <FaTwitter size={40} />
+            <a
+              href={`https://twitter.com/intent/tweet?text="${quote}" %0D%0A-${author}`}
+              target="_blank"
+            >
+              <FaTwitter size={40} />
             </a>
           </div>
         </div>
       </div>
     </>
   );
- 
- 
-    
 }
 
 export default QuoteBox;
