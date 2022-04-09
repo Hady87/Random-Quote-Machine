@@ -4,7 +4,7 @@ import QuoteBox from "./components/QuoteBox";
 import Footer from "./components/Footer";
 import { QuoteProvider } from "./context/QuoteContext";
 import "./App.css";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+
 
 function App() {
   return (

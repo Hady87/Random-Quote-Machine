@@ -79,11 +79,7 @@ p {
 a {
   text-decoration: none;
 }
-a:hover::before {
-  content: "Tweet this quote!";
-  border: 1px solid black;
-  color: #000;
-}
+
 .footer {
   background-color: #a9a9a9;
 
