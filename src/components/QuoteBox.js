@@ -11,10 +11,11 @@ function QuoteBox() {
     <>
       <div id="quote-box">
         <div id="text">
-          <p>{`"${quote}"`}</p>
+          <div>{`"${quote}"`}</div><br/>
+          <div id="author">{`-${author}`}</div>
         </div>
 
-        <div id="author">{`-${author}`}</div>
+        
         <div id="boxButton">
           <div id="new-quote">
             <button onClick={fetchQuote} type="submit" className="btnQote">
